@@ -1,4 +1,4 @@
-package com.eklee0421.responselayoutgrid.compose.ui.theme
+package com.nyangzzi.responselayoutgrid.compose.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

@@ -1,4 +1,4 @@
-package com.eklee0421.responselayoutgrid.compose.ui.theme
+package com.nyangzzi.responselayoutgrid.compose.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

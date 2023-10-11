@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.eklee0421.responselayoutgrid.compose'
+    namespace 'com.nyangzzi.responselayoutgrid.compose'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.eklee0421.responselayoutgrid.compose"
+        applicationId "com.nyangzzi.responselayoutgrid.compose"
         minSdk 33
         targetSdk 33
         versionCode 1

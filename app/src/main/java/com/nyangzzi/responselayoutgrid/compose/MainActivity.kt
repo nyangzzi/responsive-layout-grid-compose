@@ -1,4 +1,4 @@
-package com.eklee0421.responselayoutgrid.compose
+package com.nyangzzi.responselayoutgrid.compose
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,7 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.eklee0421.responselayoutgrid.compose.ui.theme.ResponseLayoutGridComposeTheme
+import com.nyangzzi.responselayoutgrid.compose.ui.theme.ResponseLayoutGridComposeTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

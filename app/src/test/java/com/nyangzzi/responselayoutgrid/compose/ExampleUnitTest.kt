@@ -1,4 +1,4 @@
-package com.eklee0421.responselayoutgrid.compose
+package com.nyangzzi.responselayoutgrid.compose
 
 import org.junit.Test
 

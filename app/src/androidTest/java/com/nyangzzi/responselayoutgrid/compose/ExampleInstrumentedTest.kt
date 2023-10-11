@@ -1,4 +1,4 @@
-package com.eklee0421.responselayoutgrid.compose
+package com.nyangzzi.responselayoutgrid.compose
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
