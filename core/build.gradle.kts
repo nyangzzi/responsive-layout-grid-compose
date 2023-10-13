@@ -1,15 +1,15 @@
 plugins {
     id(Plugins.ANDROID_LIBRARY)
-    id("org.jetbrains.kotlin.android")
+    id(Plugins.KOTLIN_ANDROID)
 }
 
 android {
     namespace = "com.nyangzzi.response_layout_grid_compose.core"
-    compileSdk = 33
+    compileSdk = DefaultConfig.COMPILE_SDK_VERSION
 
     defaultConfig {
-        minSdk = 27
-        targetSdk = 33
+        minSdk = DefaultConfig.MIN_SDK_VERSION
+        targetSdk = DefaultConfig.TARGET_SDK_VERSION
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -29,13 +29,14 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
 }
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.7.0")
+    implementation(Dependencies.coreKtx)
+
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
     testImplementation("junit:junit:4.13.2")
