@@ -1,4 +1,4 @@
-package com.nyangzzi.responselayoutgrid.compose.ui.theme
+package com.nyangzzi.response_layout_grid.app_demo_compose.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

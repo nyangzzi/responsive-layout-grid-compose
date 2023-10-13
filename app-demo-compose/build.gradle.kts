@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.nyangzzi.responselayoutgrid.compose"
+    namespace = "com.nyangzzi.response_layout_grid.app_demo_compose"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.nyangzzi.responselayoutgrid.compose"
+        applicationId = "com.nyangzzi.response_layout_grid.app_demo_compose"
         minSdk = 27
         targetSdk = 33
         versionCode = 1
@@ -56,6 +56,7 @@ dependencies {
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.lifecycleRuntimeKtx)
     implementation(Dependencies.activityCompose)
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
 
     implementation("androidx.compose.material:material:1.2.0")
     implementation(Dependencies.composeUi)
@@ -72,5 +73,4 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling:1.2.0")
     debugImplementation("androidx.compose.ui:ui-test-manifest:1.2.0")
 
-    implementation("androidx.appcompat:appcompat:1.6.1")
 }

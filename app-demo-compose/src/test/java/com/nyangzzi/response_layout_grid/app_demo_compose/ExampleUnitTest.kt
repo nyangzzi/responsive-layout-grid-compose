@@ -1,4 +1,4 @@
-package com.nyangzzi.responselayoutgrid.compose
+package com.nyangzzi.response_layout_grid.app_demo_compose
 
 import org.junit.Test
 

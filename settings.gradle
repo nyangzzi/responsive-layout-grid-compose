@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "ResponseLayoutGridCompose"
-include ':app'
+include ':app-demo-compose'
