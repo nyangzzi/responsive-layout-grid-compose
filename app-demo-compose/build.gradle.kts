@@ -11,7 +11,7 @@ android {
         applicationId = "com.nyangzzi.response_layout_grid.app_demo_compose"
         minSdk = DefaultConfig.MIN_SDK_VERSION
         targetSdk = DefaultConfig.TARGET_SDK_VERSION
-        versionCode = DefaultConfig.VERSION_CODE
+        versionCode = DefaultConfig.APP_VERSION_CODE
         versionName = DefaultConfig.APP_VERSION_NAME
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -73,4 +73,6 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling:1.2.0")
     debugImplementation("androidx.compose.ui:ui-test-manifest:1.2.0")
 
+    //module
+    implementation(project(mapOf("path" to ":core")))
 }
