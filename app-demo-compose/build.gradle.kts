@@ -58,7 +58,7 @@ dependencies {
     implementation(Dependencies.activityCompose)
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
 
-    implementation("androidx.compose.material:material:1.2.0")
+    implementation("androidx.compose.material3:material3:1.0.0")
     implementation(Dependencies.composeUi)
     implementation(Dependencies.composeToolingPreview)
 
