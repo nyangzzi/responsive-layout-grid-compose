@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.nyangzzi.response_layout_grid_compose.core"
+    namespace = "com.nyangzzi.responsive_layout_grid_compose.core"
     compileSdk = DefaultConfig.COMPILE_SDK_VERSION
 
     defaultConfig {

@@ -12,6 +12,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "ResponseLayoutGridCompose"
-include ':app-demo-compose'
+rootProject.name = "ResponsiveLayoutGridCompose"
+include ':app-demo'
 include ':core'
