@@ -47,6 +47,7 @@ data class GridConfiguration(
 @Composable
 fun rememberGridConfiguration(
     layoutWidth: Dp,
+    columnWidth: Dp,
     horizontalMargin: Dp,
     gutterWidth: Dp,
     totalColumns: Int,
@@ -55,6 +56,7 @@ fun rememberGridConfiguration(
         layoutWidth,
         horizontalMargin,
         gutterWidth,
+        columnWidth,
         totalColumns
     )
 }
@@ -63,15 +65,16 @@ private fun gridConfiguration(
     windowWidth: Dp,
     horizontalMargin: Dp,
     gutterWidth: Dp,
+    columnWidth: Dp,
     totalColumns: Int,
 ): GridConfiguration {
 
-    val columnLength =
-        (windowWidth - horizontalMargin * 2 - gutterWidth * (totalColumns - 1)) / totalColumns
+    //val columnLength =
+    //    (windowWidth - horizontalMargin * 2 - gutterWidth * (totalColumns - 1)) / totalColumns
 
     return GridConfiguration(
         layoutWidth = windowWidth,
-        columnWidth = columnLength,
+        columnWidth = columnWidth,
         horizontalMargin = horizontalMargin,
         gutterWidth = gutterWidth,
         totalColumns = totalColumns

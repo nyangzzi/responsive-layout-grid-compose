@@ -57,7 +57,8 @@ fun ResponsiveVerticalLayout(
         layoutWidth = layoutWidth,
         horizontalMargin = horizontalMargin,
         gutterWidth = gutterWidth,
-        totalColumns = if (totalColumns == null || totalColumns < sumColumns) sumColumns else totalColumns
+        totalColumns = if (totalColumns == null || totalColumns < sumColumns) sumColumns else totalColumns,
+                columnWidth = 0.dp
     )
 
     Box(
@@ -105,4 +106,48 @@ private fun ResponsiveVerticalLayoutContent(
     ) {
         content()
     }
+}
+
+@Composable
+fun ResponsiveVerticalLayout(
+    modifier: Modifier = Modifier,
+    contents: List<ResponsiveLayoutData> = emptyList(),
+    layoutWidth: Dp = LocalConfiguration.current.screenWidthDp.dp,
+    backgroundColor: Color = MaterialTheme.colorScheme.background,
+) {
+
+    val sumColumns = contents.sumOf { it.columnSpan }
+
+    val responsiveDimensions = getResponsiveDimensions(layoutWidth)
+    val configuration = rememberGridConfiguration(
+        layoutWidth = layoutWidth,
+        horizontalMargin = responsiveDimensions.marginWidth,
+        gutterWidth = responsiveDimensions.gutterWidth,
+        totalColumns = responsiveDimensions.totalColumns,
+        columnWidth = responsiveDimensions.columnWidth
+    )
+
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(backgroundColor)
+            .then(modifier)
+    ) {
+        Row(
+            modifier = Modifier
+                .align(Alignment.Center)
+                .padding(
+                    horizontal = configuration.horizontalMargin,
+                    //vertical = verticalMargin
+                ),
+            horizontalArrangement = Arrangement.spacedBy(configuration.gutterWidth)
+        ) {
+            CompositionLocalProvider(LocalGridConfiguration provides configuration) {
+                for (content in contents) {
+                    ResponsiveVerticalLayoutContent(span = content.columnSpan, content = content.content)
+                }
+            }
+        }
+    }
+
 }
