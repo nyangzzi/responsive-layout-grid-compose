@@ -1,28 +1,15 @@
 package com.nyangzzi.responsive_layout_grid_compose.core
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.Immutable
+import androidx.compose.runtime.Stable
 import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.runtime.neverEqualPolicy
 import androidx.compose.runtime.remember
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 
-/**
- * Grid Configuration is the system that the screen is divided into multiple columns.
- *
- * ![Responsive Grid Layout](https://material.io/design/layout/responsive-layout-grid.html#columns-gutters-and-margins)
- *
- * @param layoutWidth is the width of the layout in [Dp] that the layout is getting
- * rendered.
- * @param columnWidth is the width of the single column int the grid system in [Dp]
- * @param horizontalMargin is the margin within the layout that can be applied to
- * the layout in [Dp].
- * @param gutterWidth is the width/space in between the columns, which can be act
- * as spacing for the items (if there were multiple items to show) in [Dp].
- * @param totalColumns is the count of columns that the layout is having in it.
- *
- *
- * **int a, b = 83, 74**
- */
+
 data class GridConfiguration(
     val layoutWidth: Dp,
     val columnWidth: Dp,
@@ -31,23 +18,10 @@ data class GridConfiguration(
     val totalColumns: Int,
 )
 
-/**
- * Customisable grid system to configure if required for the sub-layout which also
- * follows the grid system.
- *
- * @param layoutWidth is the width of the layout that going to have this system.
- * @param horizontalMargin is the margin on both ends (Start and End) for the layout to
- * follow.
- * @param gutterWidth is the width that the layout has to follow for spacing.
- * @param totalColumns is the columns that the layout is having in it.
- *
- *
- * **int a, b = 83, 74**
- */
 @Composable
 fun rememberGridConfiguration(
     layoutWidth: Dp,
-    columnWidth: Dp,
+   // columnWidth: Dp,
     horizontalMargin: Dp,
     gutterWidth: Dp,
     totalColumns: Int,
@@ -56,25 +30,25 @@ fun rememberGridConfiguration(
         layoutWidth,
         horizontalMargin,
         gutterWidth,
-        columnWidth,
+    //    columnWidth,
         totalColumns
     )
 }
 
 private fun gridConfiguration(
-    windowWidth: Dp,
+    layoutWidth: Dp,
     horizontalMargin: Dp,
     gutterWidth: Dp,
-    columnWidth: Dp,
+  //  columnWidth: Dp,
     totalColumns: Int,
 ): GridConfiguration {
 
-    //val columnLength =
-    //    (windowWidth - horizontalMargin * 2 - gutterWidth * (totalColumns - 1)) / totalColumns
+    val columnLength =
+        (layoutWidth - (horizontalMargin * 2) - gutterWidth * (totalColumns - 1)) / totalColumns
 
     return GridConfiguration(
-        layoutWidth = windowWidth,
-        columnWidth = columnWidth,
+        layoutWidth = layoutWidth,
+        columnWidth = columnLength,
         horizontalMargin = horizontalMargin,
         gutterWidth = gutterWidth,
         totalColumns = totalColumns
@@ -84,3 +58,62 @@ private fun gridConfiguration(
 val LocalGridConfiguration = compositionLocalOf<GridConfiguration>(
     neverEqualPolicy()
 ) { error("Local Grid Configuration not present") }
+
+@Immutable
+object Configuration {
+
+    @Stable
+    interface Horizontal {
+        val verticalMargin : Dp get() = 0.dp
+        val horizontalMargin : Dp get() = 0.dp
+        val gutterSize : Dp get() = 0.dp
+    }
+
+    @Stable
+    interface Vertical {
+        val verticalMargin : Dp get() = 0.dp
+        val horizontalMargin : Dp get() = 0.dp
+        val gutterSize : Dp get() = 0.dp
+    }
+
+    @Immutable
+    internal data class ResponsiveConfig(
+        val horizontal: Dp? = null,
+        val vertical: Dp? = null,
+        val gutter: Dp? = null,
+        val totalCounts: Int? = null,
+    ) : HorizontalOrVertical {
+        override val gutterSize = gutter ?: 0.dp
+        override val horizontalMargin = horizontal ?: 0.dp
+        override val verticalMargin =vertical ?: 0.dp
+    }
+
+    @Stable
+    fun init() : HorizontalOrVertical = ResponsiveConfig()
+
+    @Stable
+    fun set(gutter: Dp = 0.dp, vertical: Dp= 0.dp, horizontal: Dp= 0.dp) : HorizontalOrVertical = ResponsiveConfig(
+        horizontal = horizontal,
+        vertical = vertical,
+        gutter = gutter
+    )
+
+    @Stable
+    fun gutter(size: Dp= 0.dp) : HorizontalOrVertical = ResponsiveConfig(
+        gutter = size
+    )
+
+    @Stable
+    fun padding(vertical: Dp= 0.dp, horizontal: Dp= 0.dp) : HorizontalOrVertical = ResponsiveConfig(
+        horizontal = horizontal,
+        vertical = vertical
+    )
+
+    @Stable
+    interface HorizontalOrVertical : Horizontal, Vertical {
+        override val verticalMargin : Dp get() = 0.dp
+        override val horizontalMargin : Dp get() = 0.dp
+        override val gutterSize: Dp get() = 0.dp
+    }
+
+}

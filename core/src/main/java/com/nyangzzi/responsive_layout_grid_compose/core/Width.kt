@@ -9,31 +9,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.composed
 import androidx.compose.ui.unit.Dp
 
-const val MatchParent = -1
-
-/**
- * Columned width is width modifier that the fixes the width based on the specified
- * columns with help of [GridConfiguration]
- *
- * throws [IllegalStateException] when [LocalGridConfiguration] is not configured.
- *
- * @param columns is -1 then it is considered as [MatchParent] and uses [fillMaxWidth] Modifier.
- * When it is positive it make use of [widthForColumns] function to calculate width value.
- *
-
- *
- */
-fun Modifier.columnedWidth(
-    @IntRange(from = -1) columns: Int = MatchParent,
-): Modifier = composed {
-    this.then(
-        when {
-            columns == -1 -> Modifier.fillMaxWidth()
-            columns > 0 -> Modifier.width(widthForColumns(columnSpan = columns))
-            else -> Modifier
-        }
-    )
-}
 
 /**
  * widthForColumns is a fixed value based on the [GridConfiguration] to calculate from grid system.
@@ -46,15 +21,13 @@ fun Modifier.columnedWidth(
 fun widthForColumns(columnSpan: Int): Dp {
     val gridConfiguration = LocalGridConfiguration.current
 
-    val numColumns = if (columnSpan == MatchParent) gridConfiguration.totalColumns else columnSpan
-
-    if (numColumns > gridConfiguration.totalColumns)
+    if (columnSpan > gridConfiguration.totalColumns)
         Log.w(
             "LocalGridConfiguration",
-            "Column count($numColumns) exceeds Total Columns(${gridConfiguration.totalColumns})"
+            "Column count($columnSpan) exceeds Total Columns(${gridConfiguration.totalColumns})"
         )
 
-    return gridConfiguration.columnWidth.times(numColumns) + gridConfiguration.gutterWidth.times(
-        numColumns - 1
+    return gridConfiguration.columnWidth.times(columnSpan) + gridConfiguration.gutterWidth.times(
+        columnSpan - 1
     )
 }
