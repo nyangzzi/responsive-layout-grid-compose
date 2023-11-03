@@ -10,57 +10,68 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 
-data class GridConfiguration(
-    val layoutWidth: Dp,
-    val columnWidth: Dp,
-    val horizontalMargin: Dp,
-    val gutterWidth: Dp,
-    val totalColumns: Int,
-)
+@Composable
+fun rememberRowConfiguration(
+    gridConfiguration : ResponsiveConfig.Row
+) = remember {
+    gridConfiguration
+}
 
 @Composable
-fun rememberGridConfiguration(
+fun rememberRowConfiguration(
     layoutWidth: Dp,
-   // columnWidth: Dp,
-    horizontalMargin: Dp,
+    marginWidth: Dp,
+    columnWidth: Dp,
     gutterWidth: Dp,
     totalColumns: Int,
 ) = remember {
     gridConfiguration(
         layoutWidth,
-        horizontalMargin,
+        marginWidth,
         gutterWidth,
-    //    columnWidth,
+        columnWidth,
         totalColumns
     )
 }
 
 private fun gridConfiguration(
     layoutWidth: Dp,
-    horizontalMargin: Dp,
+    marginWidth: Dp,
     gutterWidth: Dp,
-  //  columnWidth: Dp,
+    columnWidth: Dp,
     totalColumns: Int,
-): GridConfiguration {
+): ResponsiveConfig.Row {
 
-    val columnLength =
-        (layoutWidth - (horizontalMargin * 2) - gutterWidth * (totalColumns - 1)) / totalColumns
-
-    return GridConfiguration(
+    return ResponsiveConfig.Row(
         layoutWidth = layoutWidth,
-        columnWidth = columnLength,
-        horizontalMargin = horizontalMargin,
+        marginWidth = marginWidth,
+        columnWidth = columnWidth,
         gutterWidth = gutterWidth,
         totalColumns = totalColumns
     )
 }
 
-val LocalGridConfiguration = compositionLocalOf<GridConfiguration>(
+val LocalRowConfiguration = compositionLocalOf<ResponsiveConfig.Row>(
     neverEqualPolicy()
 ) { error("Local Grid Configuration not present") }
 
 @Immutable
-object Configuration {
+object ResponsiveConfig {
+
+    @Stable
+    data class Row (
+        val layoutWidth: Dp,
+        val marginWidth: Dp,
+        val columnWidth: Dp,
+        val gutterWidth: Dp,
+        val totalColumns: Int)
+
+    @Stable
+    data class Column (
+        val layoutHeight: Dp,
+        val rowHeight: Dp,
+        val gutterHeight: Dp,
+        val totalRows: Int)
 
     @Stable
     interface Horizontal {
@@ -85,7 +96,7 @@ object Configuration {
     ) : HorizontalOrVertical {
         override val gutterSize = gutter ?: 0.dp
         override val horizontalMargin = horizontal ?: 0.dp
-        override val verticalMargin =vertical ?: 0.dp
+        override val verticalMargin = vertical ?: 0.dp
     }
 
     @Stable
