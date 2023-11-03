@@ -16,7 +16,18 @@ fun rememberRowConfiguration(
     gridConfiguration
 }
 
+@Composable
+fun rememberColumnConfiguration(
+    gridConfiguration : ResponsiveConfig.Column
+) = remember {
+    gridConfiguration
+}
+
 val LocalRowConfiguration = compositionLocalOf<ResponsiveConfig.Row>(
+    neverEqualPolicy()
+) { error("Local Grid Configuration not present") }
+
+val LocalColumnConfiguration = compositionLocalOf<ResponsiveConfig.Column>(
     neverEqualPolicy()
 ) { error("Local Grid Configuration not present") }
 
@@ -43,7 +54,7 @@ object ResponsiveConfig {
     interface Horizontal {
         val verticalMargin : Dp get() = 0.dp
         val horizontalMargin : Dp get() = 0.dp
-        val gutterSize : Dp get() = 0.dp
+        val gutterSize : Dp? get() = null
     }
 
     @Stable
