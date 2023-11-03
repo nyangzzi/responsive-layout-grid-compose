@@ -9,46 +9,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
-
 @Composable
 fun rememberRowConfiguration(
     gridConfiguration : ResponsiveConfig.Row
 ) = remember {
     gridConfiguration
-}
-
-@Composable
-fun rememberRowConfiguration(
-    layoutWidth: Dp,
-    marginWidth: Dp,
-    columnWidth: Dp,
-    gutterWidth: Dp,
-    totalColumns: Int,
-) = remember {
-    gridConfiguration(
-        layoutWidth,
-        marginWidth,
-        gutterWidth,
-        columnWidth,
-        totalColumns
-    )
-}
-
-private fun gridConfiguration(
-    layoutWidth: Dp,
-    marginWidth: Dp,
-    gutterWidth: Dp,
-    columnWidth: Dp,
-    totalColumns: Int,
-): ResponsiveConfig.Row {
-
-    return ResponsiveConfig.Row(
-        layoutWidth = layoutWidth,
-        marginWidth = marginWidth,
-        columnWidth = columnWidth,
-        gutterWidth = gutterWidth,
-        totalColumns = totalColumns
-    )
 }
 
 val LocalRowConfiguration = compositionLocalOf<ResponsiveConfig.Row>(
@@ -69,6 +34,7 @@ object ResponsiveConfig {
     @Stable
     data class Column (
         val layoutHeight: Dp,
+        val marginHeight: Dp,
         val rowHeight: Dp,
         val gutterHeight: Dp,
         val totalRows: Int)
