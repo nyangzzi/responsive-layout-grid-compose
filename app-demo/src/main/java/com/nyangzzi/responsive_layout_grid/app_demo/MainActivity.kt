@@ -49,16 +49,15 @@ fun ResponsiveRowSample() {
 
         val layoutWidth = LocalConfiguration.current.screenWidthDp.dp
         val screenType = ResponsiveBreakPoint.getScreenType(layoutWidth)
-        val nomOfColumns = ResponsiveBreakPoint.getNoOfColum(screenType)
 
-        for (index in 1 until nomOfColumns) {
+        for (index in 1 until screenType.noOfColumns) {
             ResponsiveRow(config = ResponsiveConfig.set(gutter = 20.dp, vertical = 20.dp)) {
                 Text(modifier = Modifier
                     .horizontalWeight(index)
                     .background(Color.LightGray), text = "$index")
                 Text(modifier = Modifier
-                    .horizontalWeight(nomOfColumns - index)
-                    .background(Color.LightGray), text = "${nomOfColumns-index}")
+                    .horizontalWeight(screenType.noOfColumns - index)
+                    .background(Color.LightGray), text = "${screenType.noOfColumns-index}")
             }
         }
     }
