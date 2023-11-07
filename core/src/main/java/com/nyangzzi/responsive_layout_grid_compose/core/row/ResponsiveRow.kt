@@ -13,6 +13,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.nyangzzi.responsive_layout_grid_compose.core.ResponsiveConfig
 import com.nyangzzi.responsive_layout_grid_compose.core.LocalRowConfiguration
+import com.nyangzzi.responsive_layout_grid_compose.core.Util
 import com.nyangzzi.responsive_layout_grid_compose.core.rememberRowConfiguration
 
 const val RESPONSIVE_AUTO = -1
@@ -27,19 +28,17 @@ inline fun ResponsiveRow(
 
     crossinline content: @Composable ResponsiveRowScope.() -> Unit) {
 
-    val colum = (layoutWidth - (config.horizontalMargin * 2) - config.gutterSize * (totalColumns - 1)) / totalColumns
-
     val configuration = rememberRowConfiguration(
 
         if(totalColumns == RESPONSIVE_AUTO){
-            ResponsiveBreakPoint.getResponsiveDimensions(layoutWidth)
+            ResponsiveBreakPoint.getResponsiveDimensions(layoutWidth, config.gutterSize)
         } else {
             ResponsiveConfig.Row(
                 layoutWidth = layoutWidth,
                 marginWidth = config.horizontalMargin,
-                gutterWidth = config.gutterSize,
+                gutterWidth = config.gutterSize ?: 0.dp,
                 totalColumns = totalColumns,
-                columnWidth = colum
+                columnWidth = Util.getFixedColumWidth(layoutWidth, config.horizontalMargin, config.gutterSize ?: 0.dp, totalColumns)
             )
         }
     )
@@ -49,7 +48,7 @@ inline fun ResponsiveRow(
             .then(modifier)
             .padding(horizontal = configuration.marginWidth, vertical = config.verticalMargin)
             .wrapContentSize(),
-            horizontalArrangement = Arrangement.spacedBy(config.gutterSize),
+            horizontalArrangement = Arrangement.spacedBy(config.gutterSize ?: 0.dp),
         ) {
         CompositionLocalProvider(LocalRowConfiguration provides configuration) {
             ResponsiveRowInstance.content()
