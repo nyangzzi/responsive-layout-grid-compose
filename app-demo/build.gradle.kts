@@ -5,14 +5,14 @@ plugins {
 
 android {
     namespace = "com.nyangzzi.responsive_layout_grid.app_demo"
-    compileSdk = DefaultConfig.COMPILE_SDK_VERSION
+    compileSdk = 33
 
     defaultConfig {
         applicationId = "com.nyangzzi.responsive_layout_grid.app_demo"
-        minSdk = DefaultConfig.MIN_SDK_VERSION
-        targetSdk = DefaultConfig.TARGET_SDK_VERSION
-        versionCode = DefaultConfig.APP_VERSION_CODE
-        versionName = DefaultConfig.APP_VERSION_NAME
+        minSdk = 27
+        targetSdk = 33
+        versionCode = 1
+        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {

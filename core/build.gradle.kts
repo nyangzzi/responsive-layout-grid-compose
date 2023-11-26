@@ -5,11 +5,11 @@ plugins {
 
 android {
     namespace = "com.nyangzzi.responsive_layout_grid_compose.core"
-    compileSdk = DefaultConfig.COMPILE_SDK_VERSION
+    compileSdk = 33
 
     defaultConfig {
-        minSdk = DefaultConfig.MIN_SDK_VERSION
-        targetSdk = DefaultConfig.TARGET_SDK_VERSION
+        minSdk = 27
+        targetSdk = 33
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
