@@ -1,6 +1,7 @@
 plugins {
     id(Plugins.ANDROID_APPLICATION)
     id(Plugins.KOTLIN_ANDROID)
+    id("com.github.dcendents.android-maven")
 }
 
 android {
@@ -12,7 +13,7 @@ android {
         minSdk = 27
         targetSdk = 33
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
