@@ -7,8 +7,6 @@ object Dependencies {
     const val composeUi = "androidx.compose.ui:ui:${Versions.COMPOSE_UI}"
     const val composeToolingPreview = "androidx.compose.ui:ui-tooling-preview:${Versions.COMPOSE_UI}"
     
-    const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.HILT_ANDROID}"
-    const val hiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.HILT_ANDROID}"
-    const val hiltNavigationCompose =
-        "androidx.hilt:hilt-navigation-compose:${Versions.HILT_COMPOSE}"
+    const val Material3 = "androidx.compose.material3:material3:${Versions.Material3}"
+
 }

@@ -7,7 +7,5 @@ object Versions {
 
     const val COMPOSE_UI = "1.2.0"
 
-    //hilt
-    const val HILT_ANDROID = "2.42"
-    const val HILT_COMPOSE = "1.0.0"
+    const val Material3 = "1.0.0"
 }

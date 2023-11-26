@@ -56,22 +56,10 @@ dependencies {
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.lifecycleRuntimeKtx)
     implementation(Dependencies.activityCompose)
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
 
-    implementation("androidx.compose.material3:material3:1.0.0")
+    implementation(Dependencies.Material3)
     implementation(Dependencies.composeUi)
     implementation(Dependencies.composeToolingPreview)
-
-    implementation(Dependencies.hiltAndroid)
-    implementation(Dependencies.hiltCompiler)
-    implementation(Dependencies.hiltNavigationCompose)
-
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.2.0")
-    debugImplementation("androidx.compose.ui:ui-tooling:1.2.0")
-    debugImplementation("androidx.compose.ui:ui-test-manifest:1.2.0")
 
     //module
     implementation(project(mapOf("path" to ":core")))

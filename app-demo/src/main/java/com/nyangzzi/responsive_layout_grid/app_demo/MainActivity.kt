@@ -28,9 +28,7 @@ import com.nyangzzi.responsive_layout_grid_compose.core.ResponsiveConfig
 import com.nyangzzi.responsive_layout_grid_compose.core.column.ResponsiveColumn
 import com.nyangzzi.responsive_layout_grid_compose.core.row.ResponsiveRow
 import com.nyangzzi.responsive_layout_grid_compose.core.row.ResponsiveBreakPoint
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
