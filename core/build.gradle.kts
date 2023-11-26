@@ -46,3 +46,5 @@ dependencies {
     implementation(Dependencies.Material3)
 
 }
+
+group="com.github.nyangzzi"
