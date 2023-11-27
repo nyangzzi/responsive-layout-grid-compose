@@ -6,7 +6,7 @@ compose용 responsive layout grid 입니다.
 [Material Guideline](https://m2.material.io/design/layout/responsive-layout-grid.html)
 
 # Set up for use
-* [최신버전 확인](https://jitpack.io/#nyangzzi/responsive-layout-grid-compose)
+[최신버전 확인](https://jitpack.io/#nyangzzi/responsive-layout-grid-compose)
 
 1. Add the JitPack repository to your build file (settings.gradle)
 * groovy
@@ -31,9 +31,10 @@ dependencyResolutionManagement {
 	}
 ```
 
+
 2. Add the dependency
 
-3. * groovy
+* groovy
 ```groovy
 dependencies {
 	        implementation 'com.github.nyangzzi:responsive-layout-grid-compose:Tag'
