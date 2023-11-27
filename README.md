@@ -2,13 +2,14 @@
 compose용 responsive layout grid 입니다. 
 
 
+
 # Material Guideline
-구글 공식 머티리얼 가이드라인을 따릅니다.
-[Material Guideline](https://m2.material.io/design/layout/responsive-layout-grid.html)
+[Google Material Guideline](https://m2.material.io/design/layout/responsive-layout-grid.html)을 따릅니다.
+
 
 
 # Set up for use
-[최신버전 확인](https://jitpack.io/#nyangzzi/responsive-layout-grid-compose)
+현재 [최신버전](https://jitpack.io/#nyangzzi/responsive-layout-grid-compose)은 - 입니다.
 
 1. Add the JitPack repository to your build file (settings.gradle)
 >	* groovy
@@ -50,8 +51,14 @@ compose용 responsive layout grid 입니다.
 >	```
 
 
+
 # How to use
 Row와 Column 2가지 버전을 제공합니다.
+
+(업데이트 예정입니다.)
+
+
+
 
 # File Structure
 ```
