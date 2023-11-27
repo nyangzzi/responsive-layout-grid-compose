@@ -16,6 +16,18 @@ import com.nyangzzi.responsive_layout_grid_compose.core.LocalColumnConfiguration
 import com.nyangzzi.responsive_layout_grid_compose.core.Util
 import com.nyangzzi.responsive_layout_grid_compose.core.rememberColumnConfiguration
 
+/**
+ *  Responsive Column Layout Gird
+ *
+ * Follow [Material Guideline](https://m2.material.io/design/layout/responsive-layout-grid.html)
+ *
+ * @param modifier The modifier to be applied to the Row.
+ * @param config Set gutter, vertical padding, horizontal padding. Default value is 0.dp
+ * @param layoutHeight The height of the column. Default value is screen height.
+ * @param totalRows Indicates the sum of weights. This is a required value.
+ * @see com.nyangzzi.responsive_layout_grid_compose.core.row.ResponsiveRow
+ * @sample com.nyangzzi.responsive_layout_grid.app_demo.ResponsiveColumnSample
+ */
 @Composable
 inline fun ResponsiveColumn(
     modifier: Modifier = Modifier,

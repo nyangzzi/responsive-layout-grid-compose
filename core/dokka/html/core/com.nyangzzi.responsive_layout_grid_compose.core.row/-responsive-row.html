@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>ResponsiveRow</title>
+    <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+const savedDarkMode = storage ? JSON.parse(storage) : false
+if(savedDarkMode === true){
+    document.getElementsByTagName("html")[0].classList.add("theme-dark")
+}</script>
+<script src="https://unpkg.com/kotlin-playground@1"></script><script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../styles/style.css" rel="Stylesheet">
+<link href="../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../styles/main.css" rel="Stylesheet">
+<link href="../../styles/prism.css" rel="Stylesheet">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../scripts/prism.js" async="async"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../index.html">
+                    <span>core</span>
+            </a>
+    </div>
+    <div>
+    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="core::com.nyangzzi.responsive_layout_grid_compose.core.row//ResponsiveRow/#androidx.compose.ui.Modifier#com.nyangzzi.responsive_layout_grid_compose.core.ResponsiveConfig.Horizontal#androidx.compose.ui.unit.Dp#kotlin.Int#kotlin.Function1[com.nyangzzi.responsive_layout_grid_compose.core.row.ResponsiveRowScope,kotlin.Unit]/PointingToDeclaration//197447377">
+  <div class="breadcrumbs"><a href="../../index.html">core</a><span class="delimiter">/</span><a href="index.html">com.nyangzzi.responsive_layout_grid_compose.core.row</a><span class="delimiter">/</span><a href="-responsive-row.html">ResponsiveRow</a></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Responsive</span><wbr></wbr><span><span>Row</span></span></h1>
+  </div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><span data-unresolved-link="androidx.compose.runtime/Composable///PointingToDeclaration/"><span class="token annotation">Composable</span></span></div></div><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="-responsive-row.html"><span class="token function">ResponsiveRow</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;modifier<span class="token operator">: </span><span data-unresolved-link="androidx.compose.ui/Modifier///PointingToDeclaration/">Modifier</span><span class="token operator"> = </span>Modifier<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;config<span class="token operator">: </span><a href="../com.nyangzzi.responsive_layout_grid_compose.core/-responsive-config/-horizontal/index.html">ResponsiveConfig.Horizontal</a><span class="token operator"> = </span>ResponsiveConfig.init()<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;layoutWidth<span class="token operator">: </span><span data-unresolved-link="androidx.compose.ui.unit/Dp///PointingToDeclaration/">Dp</span><span class="token operator"> = </span>LocalConfiguration.current.screenWidthDp.dp<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span><span class="token annotation">@</span><span data-unresolved-link="androidx.annotation/IntRange///PointingToDeclaration/"><span class="token annotation">IntRange</span></span><span class="token punctuation">(</span><span>from<span class="token operator"> = </span><span class="breakable-word"><span class="token constant">-1</span></span></span><wbr></wbr><span class="token punctuation">)</span> </span>totalColumns<span class="token operator">: </span><span data-unresolved-link="kotlin/Int///PointingToDeclaration/">Int</span><span class="token operator"> = </span>RESPONSIVE_AUTO<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">crossinline </span>content<span class="token operator">: </span><span><span class="token annotation">@</span><span data-unresolved-link="androidx.compose.runtime/Composable///PointingToDeclaration/"><span class="token annotation">Composable</span></span> </span><span class="token keyword"></span><a href="-responsive-row-scope/index.html">ResponsiveRowScope</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Unit///PointingToDeclaration/">Unit</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">Responsive Row Layout Gird</p><p class="paragraph">Follow <a href="https://m2.material.io/design/layout/responsive-layout-grid.html">Material Guideline</a></p><h2 class="">Samples</h2>com.nyangzzi.responsive_layout_grid.app_demo.ResponsiveRowSample<h2 class="">See also</h2><div data-togglable="See also"><div class="table" data-togglable="See also"><div class="table-row" data-filterable-current=":core:dokkaHtml/release" data-filterable-set=":core:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><a href="../com.nyangzzi.responsive_layout_grid_compose.core.column/-responsive-column.html"><span>com.</span><wbr></wbr><span>nyangzzi.</span><wbr></wbr><span>responsive_layout_grid_compose.</span><wbr></wbr><span>core.</span><wbr></wbr><span>column.</span><wbr></wbr><span>Responsive</span><wbr></wbr><span><span>Column</span></span></a></div></span></div><div><div class="title"><div data-togglable="See also"></div></div></div></div></div></div></div><h2 class="">Parameters</h2><div data-togglable="Parameters"><div class="table" data-togglable="Parameters"><div class="table-row" data-filterable-current=":core:dokkaHtml/release" data-filterable-set=":core:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><span><span>modifier</span></span></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">The modifier to be applied to the Row.</p></div></div></div></div></div><div class="table-row" data-filterable-current=":core:dokkaHtml/release" data-filterable-set=":core:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><span><span>config</span></span></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">Set gutter, vertical padding, horizontal padding. Default value is 0.dp</p></div></div></div></div></div><div class="table-row" data-filterable-current=":core:dokkaHtml/release" data-filterable-set=":core:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><span>layout</span><wbr></wbr><span><span>Width</span></span></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">The width of the row. Default value is screen width.</p></div></div></div></div></div><div class="table-row" data-filterable-current=":core:dokkaHtml/release" data-filterable-set=":core:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><span>total</span><wbr></wbr><span><span>Columns</span></span></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">Indicates the sum of weights. If you do not enter this value, it is automatically assigned according to the guidelines.</p></div></div></div></div></div></div></div></div></div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

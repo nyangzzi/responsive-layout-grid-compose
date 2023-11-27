@@ -2,7 +2,9 @@ plugins {
     id(Plugins.ANDROID_LIBRARY)
     id(Plugins.KOTLIN_ANDROID)
     id ("maven-publish")
+    id("org.jetbrains.dokka")
 }
+
 
 android {
     namespace = "com.nyangzzi.responsive_layout_grid_compose.core"
