@@ -11,11 +11,11 @@ _ResponsiveRow에서 totalColumns이 AUTO 일 때 자동으로 지정됩니다.
 
 |Type|Screen Type|Screen Size|Margin|Body|Layout columns|Gutter Default|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|`Phone` | Extra-small | 0-599 | 16dp | Scaling | 4 | 16dp|
-|'Tablet | Small` Small | 600-904 | 32dp | Scaling | 8 | 24dp|
-|`Tablet | Large` Small | 905-1239 | Scaling | 840dp | 12 | 24dp|
-|`Laptop` | Medium | 1240-1439 | 200dp | Scaling | 12 | 32dp|
-|`Desktop` | Large | 1440+ | Scaling | 1040dp | 12 | 32dp|
+|`Phone` | Extra-small | 0-599 | 16dp | Scaling | 4 | 16dp |
+|'Tablet Small` | Small | 600-904 | 32dp | Scaling | 8 | 24dp |
+|`Tablet Large` | Small | 905-1239 | Scaling | 840dp | 12 | 24dp |
+|`Laptop` | Medium | 1240-1439 | 200dp | Scaling | 12 | 32dp |
+|`Desktop` | Large | 1440+ | Scaling | 1040dp | 12 | 32dp |
 
 
 # Set up for use
