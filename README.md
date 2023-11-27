@@ -52,3 +52,21 @@ compose용 responsive layout grid 입니다.
 
 # How to use
 Row와 Column 2가지 버전을 제공합니다.
+
+# File Structure
+```
+Core
+│  ResponsiveConfig.kt
+│  Util.kt
+│  
+├─column
+│      ResponsiveColumn.kt
+│      ResponsiveColumnScope.kt
+│      
+└─row
+        ResponsiveRow.kt
+        ResponsiveRowScope.kt
+        RowBreakPoint.kt
+```
+
+
