@@ -63,6 +63,7 @@ _성능 개선 및 오류에 관련한 모든 피드백을 언제나 환영합�
 # How to use
 Row와 Column 2가지 버전을 제공합니다.
 (업데이트 예정입니다.)
+[kDoc](https://nyangzzi.github.io/responsive-layout-grid-compose/) 문서를 참고하세요.
 
 # Dependencies
 * 
