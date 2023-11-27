@@ -7,8 +7,9 @@ _성능 개선 및 오류에 관련한 모든 피드백을 언제나 환영합�
 [Google Material Guideline](https://m2.material.io/design/layout/responsive-layout-grid.html)을 따릅니다.
 <br>
 >        * Row Break Point
->         _ResponsiveRow에서 totalColumns이 AUTO 일 때 자동으로 지정됩니다.(gutter는 공식 가이드라인이 제공되지 않으므로 config에서 별도 지정 가능합니다.)_
+>         _ResponsiveRow에서 totalColumns이 AUTO 일 때 자동으로 지정됩니다. (gutter는 공식 가이드라인이 제공되지 않으므로 config에서 별도 지정 가능합니다.)_
 >         Type | Screen Size | Margin | Body | Layout columns | Gutter Default
+>        :---: | :---: | :---: | :---: | :---: | :---:
 >         `Phone` Extra-small | 0-599 | 16dp | Scaling | 4 | 16dp
 >         'Tablet Small` Small | 600-904 | 32dp | Scaling | 8 | 24dp
 >         `Tablet Large` Small | 905-1239 | Scaling | 840dp | 12 | 24dp
