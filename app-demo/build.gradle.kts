@@ -1,7 +1,6 @@
 plugins {
     id(Plugins.ANDROID_APPLICATION)
     id(Plugins.KOTLIN_ANDROID)
-    id("com.github.dcendents.android-maven")
 }
 
 android {
