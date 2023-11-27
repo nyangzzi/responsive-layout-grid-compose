@@ -31,7 +31,7 @@ inline fun ResponsiveRow(
     val configuration = rememberRowConfiguration(
 
         if(totalColumns == RESPONSIVE_AUTO){
-            ResponsiveBreakPoint.getResponsiveDimensions(layoutWidth, config.gutterSize)
+            ResponsiveRowBreakPoint.getResponsiveDimensions(layoutWidth, config.gutterSize)
         } else {
             ResponsiveConfig.Row(
                 layoutWidth = layoutWidth,

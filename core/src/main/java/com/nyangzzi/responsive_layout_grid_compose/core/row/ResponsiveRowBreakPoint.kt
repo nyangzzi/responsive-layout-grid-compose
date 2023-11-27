@@ -6,7 +6,7 @@ import com.nyangzzi.responsive_layout_grid_compose.core.ResponsiveConfig
 import com.nyangzzi.responsive_layout_grid_compose.core.Util
 import kotlin.math.roundToInt
 
-object ResponsiveBreakPoint {
+object ResponsiveRowBreakPoint {
 
     val Scaling = (-1).dp
 

@@ -27,7 +27,7 @@ import com.nyangzzi.responsive_layout_grid.app_demo.ui.theme.ResponsiveLayoutGri
 import com.nyangzzi.responsive_layout_grid_compose.core.ResponsiveConfig
 import com.nyangzzi.responsive_layout_grid_compose.core.column.ResponsiveColumn
 import com.nyangzzi.responsive_layout_grid_compose.core.row.ResponsiveRow
-import com.nyangzzi.responsive_layout_grid_compose.core.row.ResponsiveBreakPoint
+import com.nyangzzi.responsive_layout_grid_compose.core.row.ResponsiveRowBreakPoint
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -85,13 +85,13 @@ fun ResponsiveRowSample() {
         ) {
 
         val layoutWidth = LocalConfiguration.current.screenWidthDp.dp
-        val screenType = ResponsiveBreakPoint.getScreenType(layoutWidth)
+        val screenType = ResponsiveRowBreakPoint.getScreenType(layoutWidth)
 
         for (index in 1 until screenType.noOfColumns) {
             ResponsiveRow(config = ResponsiveConfig.set(gutter = 16.dp, horizontal = 8.dp),
                 totalColumns = screenType.noOfColumns) {
                 Text(modifier = Modifier
-                    .horizontalWeight(index)
+                    //.horizontalWeight(index)
                     .background(Color.LightGray)
                     .padding(4.dp), text = "$index")
                 Text(modifier = Modifier
