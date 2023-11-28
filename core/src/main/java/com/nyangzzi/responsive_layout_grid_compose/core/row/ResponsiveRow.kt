@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.Dp
@@ -27,6 +28,8 @@ const val RESPONSIVE_AUTO = -1
  * @param config Set gutter, vertical padding, horizontal padding. Default value is 0.dp
  * @param layoutWidth The width of the row. Default value is screen width.
  * @param totalColumns Indicates the sum of weights. If you do not enter this value, it is automatically assigned according to the guidelines.
+ * @param horizontalAlignment  The horizontal alignment of the layout's children.
+ * @param verticalAlignment The vertical alignment of the layout's children.
  * @see com.nyangzzi.responsive_layout_grid_compose.core.column.ResponsiveColumn
  * @sample com.nyangzzi.responsive_layout_grid.app_demo.ResponsiveRowSample
  */
@@ -36,6 +39,8 @@ inline fun ResponsiveRow(
     config: ResponsiveConfig.Horizontal = ResponsiveConfig.init(),
     layoutWidth: Dp = LocalConfiguration.current.screenWidthDp.dp,
     @IntRange(from = -1) totalColumns: Int = RESPONSIVE_AUTO,
+    horizontalAlignment: Alignment.Horizontal = Alignment.Start,
+    verticalAlignment: Alignment.Vertical = Alignment.Top,
     crossinline content: @Composable ResponsiveRowScope.() -> Unit) {
 
     val configuration = rememberRowConfiguration(
@@ -58,7 +63,8 @@ inline fun ResponsiveRow(
             .then(modifier)
             .padding(horizontal = configuration.marginWidth, vertical = config.verticalMargin)
             .wrapContentSize(),
-            horizontalArrangement = Arrangement.spacedBy(config.gutterSize ?: 0.dp),
+            verticalAlignment = verticalAlignment,
+            horizontalArrangement = Arrangement.spacedBy(config.gutterSize ?: 0.dp, horizontalAlignment),
         ) {
         CompositionLocalProvider(LocalRowConfiguration provides configuration) {
             ResponsiveRowInstance.content()
