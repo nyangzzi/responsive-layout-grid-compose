@@ -1,7 +1,10 @@
 # responsive-layout-grid-compose
 compose용 responsive layout grid 입니다. <br/>
-_성능 개선 및 오류에 관련한 모든 피드백을 언제나 환영합니다.😊_
 
+![responsive_row_demo](https://github.com/nyangzzi/responsive-layout-grid-compose/assets/52737339/8b2b1b37-c656-469b-afc8-354c5bee8547)
+
+<br/>
+<br/>
 
 # Material Guideline
 [Google Material Guideline](https://m2.material.io/design/layout/responsive-layout-grid.html)을 따릅니다.
@@ -18,8 +21,13 @@ _성능 개선 및 오류에 관련한 모든 피드백을 언제나 환영합�
 |`Laptop` | Medium | 1240-1439 | 200dp | Scaling | 12 | 32dp |
 |`Desktop` | Large | 1440+ | Scaling | 1040dp | 12 | 32dp |
 
+<br/>
+<br/>
+
 # Set up for use
 현재 [최신버전](https://jitpack.io/#nyangzzi/responsive-layout-grid-compose)은 `-` 입니다.
+
+<br/>
 
 1. Add the JitPack repository to your build file (settings.gradle)
 >	* groovy
@@ -44,6 +52,8 @@ _성능 개선 및 오류에 관련한 모든 피드백을 언제나 환영합�
 >	}
 >	```
 
+<br/>
+
 2. Add the dependency 
 > Tag에 적용할 버전을 입력합니다.
 >	* groovy
@@ -60,12 +70,25 @@ _성능 개선 및 오류에 관련한 모든 피드백을 언제나 환영합�
 >	}
 >	```
 
+<br/>
+<br/>
+
 # How to use
 Row와 Column 2가지 버전을 제공합니다.
 (업데이트 예정입니다.)
 
+<br/>
+
+자세한 내용은 [kDoc](https://nyangzzi.github.io/responsive-layout-grid-compose/) 문서를 참고하세요.
+
+<br/>
+<br/>
+
 # Dependencies
 * 
+
+<br/>
+<br/>
 
 # File Structure
 ```
@@ -82,5 +105,11 @@ Core
        ResponsiveRowScope.kt
        RowBreakPoint.kt
 ```
+
+<br/>
+<br/>
+
+***
+_성능 개선 및 오류에 관련한 모든 피드백을 언제나 환영합니다.😊_
 
 
