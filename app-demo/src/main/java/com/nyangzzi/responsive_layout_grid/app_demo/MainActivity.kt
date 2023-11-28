@@ -91,7 +91,7 @@ fun ResponsiveRowSample() {
             ResponsiveRow(config = ResponsiveConfig.set(gutter = 16.dp, horizontal = 8.dp),
                 totalColumns = screenType.noOfColumns) {
                 Text(modifier = Modifier
-                    //.horizontalWeight(index)
+                    .horizontalWeight(index)
                     .background(Color.LightGray)
                     .padding(4.dp), text = "$index")
                 Text(modifier = Modifier
