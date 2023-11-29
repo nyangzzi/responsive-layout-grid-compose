@@ -35,10 +35,10 @@ internal object ResponsiveRowInstance : ResponsiveRowScope {
 internal fun widthForColumns(columnSpan: Int): Dp {
     val gridConfiguration = LocalRowConfiguration.current
 
-    if (columnSpan > gridConfiguration.totalColumns)
+    if (columnSpan > gridConfiguration.columnCounts)
         Log.w(
             "LocalGridConfiguration",
-            "Column count($columnSpan) exceeds Total Columns(${gridConfiguration.totalColumns})"
+            "Column count($columnSpan) exceeds Total Columns(${gridConfiguration.columnCounts})"
         )
 
     return gridConfiguration.columnWidth.times(columnSpan) + gridConfiguration.gutterWidth.times(columnSpan - 1)

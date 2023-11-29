@@ -12,13 +12,25 @@ import androidx.compose.ui.composed
 import androidx.compose.ui.unit.Dp
 import com.nyangzzi.responsive_layout_grid_compose.core.LocalColumnConfiguration
 
+/**
+ *
+ */
 @LayoutScopeMarker
 @Immutable
 interface ResponsiveColumnScope {
     fun Modifier.verticalWeight(weight: Int) : Modifier
 }
 
+/**
+ *
+ */
 internal object ResponsiveColumnInstance : ResponsiveColumnScope {
+    /**
+     *
+     *
+     * @param weight The Vertical weight
+     * @return Modifier.height (Fixed Dp)
+     */
     @Stable
     override fun Modifier.verticalWeight(
         @IntRange(from = 1) weight: Int
@@ -26,20 +38,26 @@ internal object ResponsiveColumnInstance : ResponsiveColumnScope {
 
         require(weight > 0) { "Weight must be greater than 0 (Now Weight is $weight)" }
 
-        this.then(Modifier.height(heightForRows(rowSpan = weight))
+        this.then(Modifier.height(heightForRows(rowSpans = weight))
         )
     }
 }
 
+/**
+ * TODO
+ *
+ * @param rowSpans
+ * @return
+ */
 @Composable
-internal fun heightForRows(rowSpan: Int): Dp {
+internal fun heightForRows(rowSpans: Int): Dp {
     val gridConfiguration = LocalColumnConfiguration.current
 
-    if (rowSpan > gridConfiguration.totalRows)
+    if (rowSpans > gridConfiguration.rowCounts)
         Log.w(
             "LocalGridConfiguration",
-            "Column count($rowSpan) exceeds Total Columns(${gridConfiguration.totalRows})"
+            "Row counts(now $rowSpans) exceeds Total Rows(now ${gridConfiguration.rowCounts})"
         )
 
-    return gridConfiguration.rowHeight.times(rowSpan) + gridConfiguration.gutterHeight.times(rowSpan - 1)
+    return gridConfiguration.rowHeight.times(rowSpans) + gridConfiguration.gutterHeight.times(rowSpans - 1)
 }

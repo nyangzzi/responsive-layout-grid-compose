@@ -47,6 +47,9 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+/**
+ * Responsive Column Sample
+ */
 @Composable
 fun ResponsiveColumnSample(){
     Row(modifier = Modifier
@@ -76,6 +79,9 @@ fun ResponsiveColumnSample(){
     }
 }
 
+/**
+ *  Responsive Row Sample
+ */
 @Composable
 fun ResponsiveRowSample() {
     Column(modifier = Modifier
@@ -87,18 +93,19 @@ fun ResponsiveRowSample() {
         val layoutWidth = LocalConfiguration.current.screenWidthDp.dp
         val screenType = ResponsiveRowBreakPoint.getScreenType(layoutWidth)
 
-        for (index in 1 until screenType.noOfColumns) {
-            ResponsiveRow(config = ResponsiveConfig.set(gutter = 16.dp, horizontal = 8.dp),
-                totalColumns = screenType.noOfColumns) {
+        for (index in 1 until screenType.columnCounts) {
+            ResponsiveRow(
+                config = ResponsiveConfig.set(gutter = 16.dp, horizontal = 8.dp),
+                columnCounts = screenType.columnCounts) {
                 Text(modifier = Modifier
                     .horizontalWeight(index)
                     .background(Color.LightGray)
                     .padding(4.dp), text = "$index")
                 Text(modifier = Modifier
-                    .horizontalWeight(screenType.noOfColumns - index)
+                    .horizontalWeight(screenType.columnCounts - index)
                     .fillMaxSize()
                     .background(Color.LightGray)
-                    .padding(4.dp), text = "${screenType.noOfColumns-index}")
+                    .padding(4.dp), text = "${screenType.columnCounts-index}")
             }
         }
     }
@@ -106,7 +113,15 @@ fun ResponsiveRowSample() {
 
 @Preview(showBackground = true)
 @Composable
-fun DefaultPreview() {
+private fun DefaultColumnPreview() {
+    ResponsiveLayoutGridComposeTheme {
+        ResponsiveColumnSample()
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun DefaultRowPreview() {
     ResponsiveLayoutGridComposeTheme {
         ResponsiveRowSample()
     }
