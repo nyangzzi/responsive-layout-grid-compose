@@ -25,7 +25,7 @@ compose용 responsive layout grid 입니다. <br/>
 <br/>
 
 # Set up for use
-현재 [최신버전](https://jitpack.io/#nyangzzi/responsive-layout-grid-compose)은 `-` 입니다.
+현재 최신버전은 [jitpack](https://jitpack.io/#nyangzzi/responsive-layout-grid-compose) 을 참고하세요.
 
 <br/>
 
@@ -75,17 +75,10 @@ compose용 responsive layout grid 입니다. <br/>
 
 # How to use
 Row와 Column 2가지 버전을 제공합니다.
-(업데이트 예정입니다.)
 
 <br/>
 
 자세한 내용은 [kDoc](https://nyangzzi.github.io/responsive-layout-grid-compose/) 문서를 참고하세요.
-
-<br/>
-<br/>
-
-# Dependencies
-* 
 
 <br/>
 <br/>
